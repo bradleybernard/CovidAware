@@ -1,0 +1,50 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Push a new release build to the App Store and submit for release"
+  lane :release do
+    # Remove previous build artifacts
+    clean_build_artifacts
+
+    # Signing certificates
+    get_certificates(
+      output_path: ENV['CERTS_OUTPUT_PATH']
+    )
+
+    # Provisioning profiles
+    get_provisioning_profile(
+      output_path: ENV['CERTS_OUTPUT_PATH']
+    )
+
+    # Bump build
+    increment_build_number
+
+    # Build for release
+    gym( 
+      scheme: "CovidTracker WatchKit App",
+      output_directory: ENV['BUILD_OUTPUT_PATH'],
+      clean: true,
+      export_options: {
+        method: "app-store",
+        provisioningProfiles: { 
+          "com.bradleybernard.CovidTracker.watchkitapp.watchkitextension" => "CovidTracker WatchKitExtension AppStore",
+          "com.bradleybernard.CovidTracker" => "CovidTracker AppStore",
+          "com.bradleybernard.CovidTracker.watchkitapp" => "CovidTracker WatchKitApp AppStore",
+        }
+      }
+    )
+
+    # Upload IPA artifact to App Store
+    deliver(
+      submit_for_review: true,
+      automatic_release: false,
+      submission_information: {
+        "export_compliance_uses_encryption": false,
+        "add_id_info_uses_idfa": false
+      }
+    )
+
+    # Remove build artifacts
+    clean_build_artifacts
+  end
+end

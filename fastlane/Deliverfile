@@ -1,0 +1,18 @@
+US_LANG = "en-US"
+
+price_tier(0)
+copyright("#{Time.now.year} #{ENV['COPYRIGHT']}")
+app_rating_config_path("./fastlane/metadata/app_store_rating_config.json")
+
+languages([US_LANG])
+
+privacy_url({ "#{US_LANG}": ENV['PRIVACY_URL'] })
+support_url({ "#{US_LANG}": ENV['SUPPORT_URL'] })
+marketing_url({ "#{US_LANG}": ENV['MARKETING_URL'] })
+
+app_review_information({
+  first_name: ENV['REVIEW_FIRST_NAME'],
+  last_name: ENV['REVIEW_LAST_NAME'],
+  phone_number: ENV['REVIEW_PHONE_NUMBER'],
+  email_address: ENV['REVIEW_EMAIL_ADDRESS'],
+})
