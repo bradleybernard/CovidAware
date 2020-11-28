@@ -8,7 +8,7 @@ Open source watchOS app that shows the latest COVID-19 data for the US and each 
 - Automatic daily fetches (even while app is in the background) for new Covid data when it is published, so it's always up to date
 - Favorite states so they appear at the top of the states list
 
-## Videos
+## Video
 ![Demo](/Assets/Demo.gif "Demo") <br/>
 Click [here](/Assets/Demo.mp4?raw=true) to download the MP4 version of the demo.
 
