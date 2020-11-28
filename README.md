@@ -35,7 +35,7 @@ Click [here](/Assets/Demo.mp4?raw=true) to download the MP4 version of the demo.
 Thanks to all the folks who contribute(d) to The COVID Tracking Project at <i>The Atlantic</i>, [license: CC BY 4.0](https://covidtracking.com/about-data/license).
 
 ## License
-
+Covid Aware app is open-sourced software licensed under the GNU General Public License.
 
 ### App Store
 Since the app shows highly sensitive public data, Apple has rejected the app from appearing on the App Store. It won't appear in the App Store since it is published by an independent developer (myself) instead of an accredited medical entity (institution / oranization).
