@@ -1,5 +1,5 @@
-# Covid Aware <img src="/Assets/App%20Icon.png?raw=true" width="60" height="60">
-Open source watchOS app that shows the latest COVID-19 data for the US and each state, powered by [The Covid Tracking Project](https://covidtracking.com/data). Written 100% in Swift using SwiftUI and Combine.
+# Covid Aware <img src="/Assets/App%20Icon.png?raw=true" width="35" height="35">
+Open source watchOS app that shows the latest COVID-19 data for the US and each state, powered by [The Covid Tracking Project](https://covidtracking.com/data). Written 100% in Swift using SwiftUI and Combine. 
 
 ## Features
 - Breakdown for all [reported metrics](https://covidtracking.com/about-data/data-definitions): Total cases, Total deaths, Daily deaths, Daily cases, Current Hospitalization, Current ICU, and more 
