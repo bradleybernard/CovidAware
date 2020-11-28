@@ -37,6 +37,6 @@ Thanks to all the folks who contribute(d) to The COVID Tracking Project at <i>Th
 ## License
 Covid Aware app is open-sourced software licensed under the GNU General Public License.
 
-### App Store
+## App Store
 Since the app shows highly sensitive public data, Apple has rejected the app from appearing on the App Store. It won't appear in the App Store since it is published by an independent developer (myself) instead of an accredited medical entity (institution / oranization).
 
