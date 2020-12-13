@@ -310,7 +310,7 @@ class ChartViewModel<CovidProvider: CovidMetricProvider>: ObservableObject {
 
     private static func makeYAxisData(chartData: ChartData) -> YAxisData {
         let yAxisData = YAxisData(numberOfSections: ChartConstants.numberOfYAxisSections)
-        let yUnitsPerSection = (chartData.maxYValue / yAxisData.numberOfSections)
+        let yUnitsPerSection = ((chartData.maxYValue - chartData.minYValue) / yAxisData.numberOfSections)
 
         (0...yAxisData.numberOfSections).reversed().forEach { section in
             let yValue = chartData.minYValue + (yUnitsPerSection * section)
