@@ -9,7 +9,15 @@ import SwiftUI
 
 struct NotificationView: View {
     var body: some View {
-        Text("Hello, World!, NOTIFICATION VIEW")
+        VStack(alignment: .leading, spacing: 0) {
+            Text(Date(), formatter: CommonDateFormatters.monthDayYear)
+                .font(.system(size: 10))
+                .foregroundColor(.gray)
+
+            Text("Check out today's new metrics!")
+                .font(.system(size: 12))
+                .foregroundColor(.white)
+        }
     }
 }
 

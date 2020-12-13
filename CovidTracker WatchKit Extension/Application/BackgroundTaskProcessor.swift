@@ -20,6 +20,7 @@ on the watch face. After you exhaust the budget, the system delays your requests
 becomes available.
 */
     var scheduleBackgroundRefresh: (() -> Void)?
+    var scheduleLocalNotification: (() -> Void)?
 
     private lazy var backgroundURLSession = {
         DataService.makeBackgroundURLSession(delegate: self)
@@ -88,5 +89,7 @@ extension BackgroundTaskProcessor: URLSessionDelegate, URLSessionDownloadDelegat
         }
 
         urlSessionTasks.removeAll()
+
+        scheduleLocalNotification?()
     }
 }

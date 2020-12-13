@@ -13,12 +13,13 @@ struct CovidTrackerApp: App {
     //swiftlint:disable weak_delegate
     @WKExtensionDelegateAdaptor(ExtensionDelegate.self) var delegate
 
+
     @SceneBuilder var body: some Scene {
         WindowGroup {
-            RootView()
+            RootView(viewModel: RootViewModel(notificationsManager: delegate.notificationsManager))
                 .environmentObject(delegate.lifecycleManager)
         }
 
-        WKNotificationScene(controller: NotificationController.self, category: "myCategory")
+        WKNotificationScene(controller: NotificationController.self, category: NotificationsManager.Category.dataUpdated.rawValue)
     }
 }

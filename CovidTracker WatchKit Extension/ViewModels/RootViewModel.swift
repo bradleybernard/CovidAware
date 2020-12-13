@@ -32,6 +32,12 @@ class RootViewModel: ObservableObject {
         }
     }
 
+    init(notificationsManager: NotificationsManager) {
+        notificationsManager.selectTab = { [weak self] tabSelection in
+            self?.selectedTab = tabSelection
+        }
+    }
+
     func tappedStates() {
         selectedTab = .usStates
     }

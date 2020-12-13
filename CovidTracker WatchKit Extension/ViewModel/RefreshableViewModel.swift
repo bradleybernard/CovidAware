@@ -21,7 +21,7 @@ class RefreshableViewModel: ViewModel {
     var cancellables: [AnyCancellable] = []
     var lastFetchedDate: Date?
     let calendar: Calendar = .current
-    let dataIntervalInMinutes = 15
+    let dataIntervalInMinutes = (60 * 24) // One day
 
     override init() {
         super.init()

@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct RootView: View {
-    @StateObject private var viewModel = RootViewModel()
+    @StateObject var viewModel: RootViewModel
+
     @StateObject var userDefaultsStorage = UserDefaultsStorage()
+    @EnvironmentObject var notificationsManager: NotificationsManager
 
     var body: some View {
         NavigationView {
@@ -31,7 +33,7 @@ struct RootView: View {
 #if DEBUG
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        RootView()
+        RootView(viewModel: .init(notificationsManager: NotificationsManager()))
     }
 }
 #endif

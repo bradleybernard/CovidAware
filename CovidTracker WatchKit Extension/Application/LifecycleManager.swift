@@ -16,8 +16,6 @@ class LifecycleManager: ObservableObject {
         scheduleBackgroundRefresh()
     }
 
-    // MARK: - Private
-
     func scheduleBackgroundRefresh() {
         guard let easternTimeZone = TimeZone(abbreviation: "EST") else {
             fatalError("Could not create eastern timezone")
