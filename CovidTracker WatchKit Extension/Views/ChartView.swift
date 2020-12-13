@@ -31,6 +31,17 @@ struct ChartView<CovidProvider: CovidMetricProvider>: View {
                         }
                         .frame(width: reader.size.width - ChartConstants.yAxisLabelWidth)
                         .disabled(true)
+                        .onChange(of: isPresented) { _ in
+                            guard isPresented else {
+                                return
+                            }
+
+                            // Wait for sheet to be presented (300ms) then save current shown index
+                            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(350)) {
+                                viewModel.startingIndex = Int(viewModel.currentIndex)
+                                viewModel.currentIndex = 0
+                            }
+                        }
 
                         yAxisLabelView(reader: reader)
                             .offset(y: -(ChartConstants.textHeight / 2))

@@ -143,7 +143,7 @@ class ChartViewModel<CovidProvider: CovidMetricProvider>: ObservableObject {
     let metricType: MetricType
     let chartConfiguration: ChartConfiguration<CovidProvider>
 
-    private var startingIndex: Int?
+    var startingIndex: Int?
 
     @Published var currentIndex: Double = 0
     @Published var offset: CGPoint = .zero
@@ -193,6 +193,7 @@ class ChartViewModel<CovidProvider: CovidMetricProvider>: ObservableObject {
         }
 
         currentIndex = Double(startingIndex)
+        self.startingIndex = nil
     }
 
     // swiftlint:disable function_body_length
